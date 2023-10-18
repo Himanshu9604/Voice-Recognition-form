@@ -45,7 +45,9 @@ body {
   left: 10px;
   border-radius: 5px;
 }
-
+.required-field{
+  color: red;
+}
 /* Styles for input elements */
 .input-with-icon {
   display: flex;

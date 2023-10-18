@@ -84,6 +84,42 @@ function Form() {
       );
     }
 
+    if (!namePattern.test(formData.LastName)) {
+      isValid = false;
+      alert(
+        "Last Name is not valid. It should contain only letters and spaces."
+      );
+    }
+
+    if (!statePattern.test(formData.State)) {
+      isValid = false;
+      alert("State is not valid. It should contain only letters and spaces.");
+    }
+
+    if (!districtPattern.test(formData.District)) {
+      isValid = false;
+      alert(
+        "District is not valid. It should contain only letters and spaces."
+      );
+    }
+
+    if (!villagePattern.test(formData.Village)) {
+      isValid = false;
+      alert("Village is not valid. It should contain only letters and spaces.");
+    }
+
+    if (!panPattern.test(formData.PANNumber)) {
+      isValid = false;
+      alert(
+        "PAN Number is not valid. It should match the pattern: AAAAA9999A."
+      );
+    }
+
+    if (!aadhaarPattern.test(formData.AadhaarNumber)) {
+      isValid = false;
+      alert("Aadhaar Number is not valid. It should be a 12-digit number.");
+    }
+
     return isValid;
   };
 
@@ -97,6 +133,7 @@ function Form() {
             <div className="input-with-label">
               <label htmlFor={fieldName} className="impressive-label">
                 {fieldName}
+                {fieldName !== "AadhaarNumber" && <span className="required-field">*</span>}
               </label>
               <div className="input-with-icon">
                 <input
